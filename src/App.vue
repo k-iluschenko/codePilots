@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <Header />
-    <MainPage />
+    <Animation />
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import MainPage from "./components/MainPage";
+import Animation from "./components/Animation";
 
 export default {
   name: "app",
   components: {
-    Header,
-    MainPage
+    Animation
   }
 };
 </script>
@@ -39,6 +36,14 @@ export default {
     url("./assets/fonts/FavoritCondC.ttf") format("truetype"),
     url("./assets/fonts/FavoritCondC.svg#FavoritCondC") format("svg");
   font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("./assets/fonts/Robotocondensed.woff2") format("woff2"),
+    url("./assets/fonts/Robotocondensed.woff") format("woff"),
+    url("./assets/fonts/Robotocondensed.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
 }
 

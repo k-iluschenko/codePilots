@@ -49,7 +49,6 @@ $color-font-dark: #222222;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
   padding-left: 24px;
   padding-right: 24px;
   margin-bottom: 200px;

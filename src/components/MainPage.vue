@@ -13,8 +13,22 @@
           </div>
         </div>
       </div>
-      <div class="title__img">
+      <div v-if="isShow" class="title__img">
         <img src="../assets/img/title.png" alt="title" />
+      </div>
+      <div v-else class="main__about">
+        <div class="about__title">Инвестиции в перспективные проекты.</div>
+        <div class="about__title">
+          МАИ - крупнейшая инвестиционная организация восточной Европы.
+        </div>
+        <c-button
+          :title="'заявка на инвестиции'"
+          :type="'blue'"
+          :className="'button__blue'"
+        />
+        <div class="about__text">
+          Расскажите о вашем проекте и подайте заявку на инвестирование
+        </div>
       </div>
     </div>
     <div class="wrapper"></div>
@@ -22,7 +36,16 @@
 </template>
 
 <script>
-export default {};
+import CButton from "./elements/CButton";
+export default {
+  name: "MainPage",
+  props: {
+    isShow: Boolean
+  },
+  components: {
+    CButton
+  }
+};
 </script>
 
 <style lang="scss">
@@ -56,6 +79,8 @@ $color-dark: #222222;
   width: 100%;
   & .title__content {
     text-align: left;
+    width: 720px;
+    margin-right: 510px;
     & .title__header {
       font-size: 350px;
       line-height: 271px;
@@ -76,12 +101,32 @@ $color-dark: #222222;
     & img {
       position: absolute;
       top: -215px;
-      left: 30px;
+      left: -510px;
       z-index: -1;
     }
   }
 }
 
+.main__about {
+  text-align: left;
+  & .about__title {
+    font-family: "Roboto Condensed";
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+  & .about__text {
+    font-family: "Roboto Condensed";
+    font-size: 28px;
+    width: 450px;
+  }
+}
+.button__blue {
+  font-family: "FavoritCondC";
+  font-size: 28px;
+  width: 260px;
+  margin-top: 130px;
+  margin-bottom: 60px;
+}
 .wrapper {
   min-width: 320px;
   display: flex;
